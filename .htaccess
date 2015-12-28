@@ -1,0 +1,5 @@
+﻿RewriteEngine On
+
+# Every request is sent to web handler
+RewriteRule ^([A-Za-z0-9._]+)$    back/core/main.php?controller=$1&action=index   [NC,L]
+RewriteRule ^([A-Za-z0-9._]+)([/]([A-Za-z0-9._])+)$    back/core/main.php?controller=$1&action=$2   [NC,L]
