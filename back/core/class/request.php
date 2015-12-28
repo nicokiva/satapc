@@ -4,6 +4,19 @@
 		private $_action;
 		private $_params;
 
+		function getController() {
+			return $this->_controller;
+		}
+
+		function getAction() {
+			return $this->_action;
+		}
+
+		function getParams() {
+			return $this->_params;
+		}
+		
+
 		function request ($controller, $action, $params) {
 			if (!isset($controller) || empty($controller)) {
 				throw new Exception("Missing Controller");
