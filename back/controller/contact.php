@@ -1,8 +1,8 @@
 <?
 	class contactController extends controller {
 
-		function Method() {
-			echo '1';
+		public function index($data) {
+			return $this->showView(null, $data);
 		}
 
 	}

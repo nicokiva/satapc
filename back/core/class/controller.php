@@ -2,6 +2,7 @@
 
 	abstract class controller {
 		private $_controllerName;
+		private $_currentAction;
 
 		static function loadController ($controller) {
 			if (!isset($controller) || empty($controller)) {
@@ -20,12 +21,28 @@
 			}
 		}
 
-	 	public function showView() {
-	 		echo $_controllerName;
+		public function controller () {
+			// get each controller's name
+			$this->_controllerName = str_replace('controller', '', strtolower(get_class($this)));
+		}
+
+		public function setAction($action) {
+			$this->_currentAction = $action;
+		}
+
+	 	public function showView($view = null, $data = null) {
+	 		if (!isset($view) || empty($view)) {
+	 			$view = $this->_currentAction;
+	 		}
+
+	 		$file = '../../front/view/' . $this->_controllerName .'/' . $view . '.php';
+	 		if (!file_exists($file)) {
+	 			throw new Exception('View not exists.');
+	 		}
+
+	 		include($file);
 	 	}
 
 	}
-
-
 
 ?>
