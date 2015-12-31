@@ -1,5 +1,8 @@
 ﻿RewriteEngine On
 
 # Every request is sent to web handler
-RewriteRule ^([A-Za-z0-9._]+)$    back/core/main.php?controller=$1&action=index   [NC,L]
-RewriteRule ^([A-Za-z0-9._]+)([/]([A-Za-z0-9._])+)$    back/core/main.php?controller=$1&action=$2   [NC,L]
+
+RewriteRule ^([A-Za-z0-9._]+)[/]?$    back/core/main.php?controller=$1&action=index   [NC,L]
+RewriteRule ^([A-Za-z0-9._]+)[/](([0-9])+)$    back/core/main.php?controller=$1&action=get&id=$2   [NC,L]
+RewriteRule ^([A-Za-z0-9._]+)[/]([A-Za-z]([A-Za-z0-9._])+)$    back/core/main.php?controller=$1&action=$2   [NC,L]
+RewriteRule ^([A-Za-z0-9._]+)[/](([0-9])+)[/]([A-Za-z][A-Za-z0-9._]+)$    back/core/main.php?controller=$1&action=$4&id=$2   [NC,L]
