@@ -1,7 +1,7 @@
 <?
 	class contactController extends controller {
 
-		public function index($data) {
+		public function Index($data) {
 			return $this->showView(null, $data);
 		}
 
