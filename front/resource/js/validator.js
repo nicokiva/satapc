@@ -1,7 +1,50 @@
-function element(id, validations) {
-	this.id = id;
-	this.validations = validations;
+function validationsContainer (validations) {
+	this._validations = validations;
+
+	this.checkValidations = function() {
+		if (this._validations == null || this._validations == undefined || this._validations.length == 0) {
+			return true;
+		}
+
+		var result = false;
+		$(this._validations).each(function(k, element) {
+			result = element.checkValidations();
+		});
+	}
 }
+
+function elementContainer(id, validations) {
+	this._id = id;
+	this._validations = validations;
+
+	this.checkValidations = function() {
+		if (this._validations == null || this._validations == undefined || this._validations.length == 0) {
+			return true;
+		}
+
+		var value = $('#' + id).val();
+
+		var result = false;
+		$(this._validations).each(function(k, validation) {
+			result = validation.validate(value);
+
+			console.log(validation);
+			console.log(result);
+		});
+	}
+}
+
+function validationContainer(validation, params) {
+	this._params = params;
+	this._validation = validation;
+
+	this.validate = function(value) {
+		return validations[this._validation].apply(null, [value, this._params]);
+	}
+}
+
+
+
 
 var validator = {
 	_has: function($field) {
@@ -16,11 +59,11 @@ var validator = {
 		/* must get only the validations part and discard the rest */
 		var fieldClass = $field.prop('class').match(/^validate\[(.*)\]/gm)[0];
 		fieldClass = fieldClass.substring(0, fieldClass.length -1); // removes the last ]
-		var validationsString = fieldClass.replace('validate[', '');
+		var validationName = fieldClass.replace('validate[', '');
 
 		var _validations = [];
 
-		$(validationsString.split(',')).each(function(k, v) {
+		$(validationName.split(',')).each(function(k, v) {
 			_validations.push(validator._determineByString(v));
 		});
 
@@ -28,34 +71,30 @@ var validator = {
 	},
 
 	_determineByString: function(validationString) {
-		var params;
+		var params = [];
+		var validationName = validationString;
 		if (validationString.indexOf('[') > -1) {
-			params = validationString.substring(validationString.indexOf('[') + 1)
-			params = params.substring(0, params.indexOf(']'));
+			paramsString = validationString.substring(validationString.indexOf('[') + 1)
+			paramsString = paramsString.substring(0, paramsString.indexOf(']'));
 
-			if (params.indexOf('-') > -1) {
+			if (paramsString.indexOf('-') > -1) {
 				// is a range
-				params = params.split('-');
+				params = paramsString.split('-');
+			} else {
+				params.push(paramsString);
 			}
-			validationString = validationString.substring(0, validationString.indexOf('['));
+			validationName = validationString.substring(0, validationString.indexOf('['));
 		}
 
-		switch (validationString) {
-			case 'required':
-				return function(value) {
-					return validations.required(value);
-				};
-			case 'length':
-				return function(value) {
-					return validations.length(value, params[0], params[1]);
-				};
-			case 'custom':
-				return function(value) {
-					return validations.custom(value, params);
-				}
-			default:
-				throw 'Not implemented validation.';
+		if (validations[validationName] == undefined) {
+			throw 'Not implemented validation.';
 		}
+
+		return new validationContainer(
+			validationName,
+			params
+		);
+
 	},
 
 	create: function() {
@@ -66,32 +105,35 @@ var validator = {
 				return true;
 			}
 
-			validations.push(new element($elem.prop('id'), validator._generate($elem)));
+			validations.push(new elementContainer($elem.prop('id'), validator._generate($elem)));
 		});
 
-		return validations;
+		return new validationsContainer(validations);
 	}
 };
 
 
+/* available validations */
 var validations = {
 	_customRegex: {
 		onlyLetter:'[a-zA-Z]+',
-		email: '(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+		email: '(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))'
 	},
 
 	required: function(value) {
 		return value.length > 0;
 	},
-	length: function(value, min, max) {
+	length: function(value, threshold) {
+		var min = threshold[0];
+		var max = threshold[1];
 		return value.length >= min && value.length <= max;
 	},
 	custom: function(value, type) {
-		if (!this._customRegex[type]) {
+		if (!validations._customRegex[type]) {
 			throw 'Not implemented validation.';
 		}
 
-		var r = new RegExp('/^' + this._customRegex[type] + '/');
+		var r = new RegExp(validations._customRegex[type] + '$');
 		return r.test(value);
 	}
 };

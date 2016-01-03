@@ -6,6 +6,12 @@
 	$(function() {
 		var validators = validator.create();
 		console.log(validators);
+
+		$('form').on('submit', function() {
+			console.log(validators.checkValidations());
+
+			return false;
+		});
 	});
 </script>
 
@@ -14,7 +20,7 @@
 		<form class="form" id="form1">
 		  
 		  <p class="name">
-		    <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0-100]] feedback-input" placeholder="Name" id="name" />
+		    <input name="name" type="text" class="validate[required,custom[onlyLetter],length[1-100]] feedback-input" placeholder="Name" id="name" />
 		  </p>
 		  
 		  <p class="email">
