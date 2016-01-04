@@ -1,8 +1,24 @@
+var errorTypes = {
+	REQUIRED: 'REQUIRED',
+	LENGTH: 'LENGTH',
+	CUSTOM: 'CUSTOM',
+
+	messages: {
+		REQUIRED: 'El campo no puede estar vacío.',
+		LENGTH: 'El campo debe cumplir la cantidad de caracteres específica.',
+		CUSTOM: 'El campo no cumple las especificaciones necesarias.'
+	}
+};
+
+
 function validationsContainer (validations) {
 	this._validations = validations;
 
 	this.checkValidations = function() {
-		if (this._validations == null || this._validations == undefined || this._validations.length == 0) {
+		$('.error').removeClass('error');
+		$('.error-description').remove();
+
+		if (!this._validations || this._validations.length == 0) {
 			return true;
 		}
 
@@ -16,34 +32,64 @@ function validationsContainer (validations) {
 function elementContainer(id, validations) {
 	this._id = id;
 	this._validations = validations;
+	this._errors;
+
+	this.showError = function() {
+		var $elem = $('#' + id);
+		
+		var $container = $elem.parent();
+
+		var errorText = '';
+		$(this._errors).each(function(k, e) {
+			errorText += errorTypes.messages[e] + '<br />';
+		});
+
+		var $errorLabel = $('<label></label>')
+							.addClass('error-description')
+							.html(errorText);
+		$elem.before($errorLabel);
+		$elem.addClass('error');
+	};
 
 	this.checkValidations = function() {
-		if (this._validations == null || this._validations == undefined || this._validations.length == 0) {
+		if (!this._validations || this._validations.length == 0) {
 			return true;
 		}
+		this._errors = [];
 
-		var value = $('#' + id).val();
-
+		var errorType;
+		var $elem = $('#' + id);
+		var value = $elem.val();
 		var result = false;
+
+		var self = this;
 		$(this._validations).each(function(k, validation) {
 			result = validation.validate(value);
 
-			console.log(validation);
-			console.log(result);
+			if (!result) {
+				errorType = validation.getValidation().toUpperCase();
+				self._errors.push(errorTypes[errorType]);
+			}
 		});
-	}
+
+		if (this._errors.length > 0) {
+			this.showError();
+		}
+	};
 }
 
 function validationContainer(validation, params) {
 	this._params = params;
 	this._validation = validation;
 
+	this.getValidation = function () {
+		return this._validation;
+	};
+
 	this.validate = function(value) {
 		return validations[this._validation].apply(null, [value, this._params]);
-	}
+	};
 }
-
-
 
 
 var validator = {
@@ -94,7 +140,6 @@ var validator = {
 			validationName,
 			params
 		);
-
 	},
 
 	create: function() {
@@ -112,12 +157,11 @@ var validator = {
 	}
 };
 
-
 /* available validations */
 var validations = {
 	_customRegex: {
 		onlyLetter:'[a-zA-Z]+',
-		email: '(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))'
+		email: '(([A-Za-z0-9_])+)[@](([A-Za-z0-9_])+)[.](([A-Za-z]){2,3})([.](([A-Za-z]){2}))?'
 	},
 
 	required: function(value) {

@@ -21,3 +21,12 @@ html{
 	width: 100px;
 	height: 50px;
 }
+
+.error {
+	border: solid 2px #ff0000 !important;
+}
+
+.error-description {
+	color: #ff5d00;
+	font-size: large;
+}

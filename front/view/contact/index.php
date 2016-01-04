@@ -4,12 +4,14 @@
 
 <script type="text/javascript">
 	$(function() {
-		var validators = validator.create();
-		console.log(validators);
+		var validations = validator.create();
 
-		$('form').on('submit', function() {
-			console.log(validators.checkValidations());
+		$('form').on('submit', function() {	
+			validations.checkValidations();
 
+			console.log(validations);
+
+			console.log();
 			return false;
 		});
 	});
@@ -20,15 +22,15 @@
 		<form class="form" id="form1">
 		  
 		  <p class="name">
-		    <input name="name" type="text" class="validate[required,custom[onlyLetter],length[1-100]] feedback-input" placeholder="Name" id="name" />
+		    <input name="name" type="text" class="validate[required,custom[onlyLetter]] feedback-input" placeholder="Daniel González" id="name" />
 		  </p>
 		  
 		  <p class="email">
-		    <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+		    <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="daniel.gonzalez@gmail.com" />
 		  </p>
 		  
 		  <p class="text">
-		    <textarea name="text" class="validate[required,length[6-300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+		    <textarea name="text" class="validate[required,length[6-300]] feedback-input" id="comment" placeholder="Solicito un presupuesto para..."></textarea>
 		  </p>
 		  
 		  
