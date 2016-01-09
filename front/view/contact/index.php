@@ -7,11 +7,39 @@
 		var validations = validator.create();
 
 		$('form').on('submit', function() {	
-			validations.checkValidations();
+			validationsResult = validations.checkValidations();
 
-			console.log(validations);
+			if (validationsResult) {
+				$.blockUI({ 
+					message: 
+						'<h2>' +
+						'	<img style="float:left" src="' + "<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/sand_watch.gif'); ?>" + '" />' +
+						'	<span>Aguarde un momento mientras enviamos su consulta...</span>' +
+						'</h2>',
+					css: {
+						width: '350px'
+					}
+				});
 
-			console.log();
+				var $request = $.post(
+					'/' + siteName + '/contact/submit',
+					$('form').serialize() 
+				);
+
+				$request.done(function(response) {
+					$.unblockUI(); // closes the sending email popup
+				})
+				.fail(function(a) {
+					$.unblockUI(); // closes the sending email popup
+
+
+					$.blockUI({ 
+						message: 'Ha ocurrido un error, intente nuevamente más tarde.'
+					});
+
+					setTimeout($.unblockUI, 2000); // closes the error popup
+				})
+			}
 			return false;
 		});
 	});

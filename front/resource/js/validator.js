@@ -22,10 +22,12 @@ function validationsContainer (validations) {
 			return true;
 		}
 
-		var result = false;
+		var result = true;
 		$(this._validations).each(function(k, element) {
-			result = element.checkValidations();
+			result = element.checkValidations() && result;
 		});
+
+		return result;
 	}
 }
 
@@ -75,6 +77,8 @@ function elementContainer(id, validations) {
 		if (this._errors.length > 0) {
 			this.showError();
 		}
+
+		return this._errors.length === 0;
 	};
 }
 

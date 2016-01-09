@@ -1,6 +1,7 @@
 <?
 
 	abstract class controller {
+		protected $_configuration;
 		private $_controllerName;
 		private $_currentAction;
 		private $_resourcesLoader;
@@ -10,7 +11,7 @@
 			'includeFooter' => true
 		);
 
-		static function loadController ($controller, $resourcesLoader) {
+		static function loadController ($controller, $configuration, $resourcesLoader, $external = null) {
 			if (!isset($controller) || empty($controller)) {
 				throw new Exception("Controller is missing");
 			}
@@ -22,12 +23,13 @@
 			    	include $filename;
 
 			    	$controller .= 'Controller';
-			    	return new $controller($resourcesLoader);
+			    	return new $controller($configuration, $resourcesLoader, $external);
 			    }
 			}
 		}
 
-		public function controller ($resourcesLoader) {
+		public function controller ($configuration, $resourcesLoader) {
+			$this->_configuration = $configuration;			
 			$this->_controllerName = str_replace('controller', '', strtolower(get_class($this))); // get each controller's name
 			$this->_resourcesLoader = $resourcesLoader;
 		}
@@ -41,15 +43,21 @@
 	 			$view = $this->_currentAction;
 	 		}
 
-
 	 		$displayOptions = $this->_defaultOptions;
 	 		if ($options != null && count($options) > 0) {
 	 			$displayOptions = array_merge($displayOptions, $options);
 	 		} 
 
 	 		if (array_key_exists('includeHeader', $displayOptions) && $displayOptions['includeHeader'] == true) {
+	 			// this header includes the HTML begin tags. This must only be the nav bar
 	 			$this->showHeader();
 	 		}
+
+	 		echo '
+	 			<script type="text/javascript">
+	 				var siteName = "' . $this->_configuration->getKey('site_name') . '";
+	 			</script>
+	 		';
 
 	 		$this->show('../../front/view/' . $this->_controllerName .'/' . $view . '.php');
 

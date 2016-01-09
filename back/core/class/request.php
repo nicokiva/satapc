@@ -33,7 +33,7 @@
 				$this->_params = array();
 
 				foreach ($params as $key => $value) {
-					array_push($this->_params, new param($key, $value));	
+					$this->_params[$key] = new param($key, $value);
 				}
 			}
 		}
@@ -54,6 +54,10 @@
 
 			$this->_name = $key;
 			$this->_value = $value;
+		}
+
+		public function getValue() {
+			return $this->_value;
 		}
 	}
 
