@@ -28,16 +28,34 @@
 
 				$request.done(function(response) {
 					$.unblockUI(); // closes the sending email popup
+
+					$.blockUI({ 
+						message: 
+							'<h2>' +
+								'Muchas gracias por su consulta! a la brevedad le estaremos respondiendo.' +
+							'</h2>',
+						css: {
+							width: '350px'
+						}
+					});
+
+					setTimeout($.unblockUI, 4000); // closes the success popup
 				})
 				.fail(function(a) {
 					$.unblockUI(); // closes the sending email popup
 
 
 					$.blockUI({ 
-						message: 'Ha ocurrido un error, intente nuevamente más tarde.'
+						message: 
+							'<h2>' +
+								'Ha ocurrido un error, intente nuevamente más tarde.' +
+							'</h2>',
+						css: {
+							width: '350px'
+						}
 					});
 
-					setTimeout($.unblockUI, 2000); // closes the error popup
+					setTimeout($.unblockUI, 4000); // closes the error popup
 				})
 			}
 			return false;

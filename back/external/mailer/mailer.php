@@ -23,7 +23,7 @@
 	        $this->_library->Host = $this->_configuration->getKey('smtp_host');
 	        $this->_library->Helo = $this->_configuration->getKey('smtp_host');
 	        $this->_library->Username = $this->_configuration->getKey('smtp_user');
-	        $this->_library->Password = $this->_configuration->getKey('smtp_password');
+	        $this->_library->Password = base64_decode($this->_configuration->getKey('smtp_password'));
 	        $this->_library->SMTPDebug = true;
 	        $this->_library->SMTPAuth = true;
 	        $this->_library->SMTPSecure = "tls";

@@ -17,9 +17,9 @@
 		}
 
 		public function Submit($data) {
-			$email = $data['email']->getValue();
-			$name = $data['name']->getValue();
-			$text = $data['text']->getValue();
+			$email = utf8_decode($data['email']->getValue());
+			$name = utf8_decode($data['name']->getValue());
+			$text = utf8_decode($data['text']->getValue());
 
 			if (empty($email)) {
 				throw new Exception('Missing email');
@@ -36,9 +36,9 @@
 	 		);
 
 		 	$content = file_get_contents('../../front/view/template/email.html');
-		 	$content = str_replace('__NAME__', utf8_decode($name), $content);
+		 	$content = str_replace('__NAME__', $name, $content);
 		 	$content = str_replace('__EMAIL__', $email, $content);
-		 	$content = str_replace('__TEXT__', utf8_decode($text), $content);
+		 	$content = str_replace('__TEXT__', $text, $content);
 			$this->_mailer->msgHTML($content);
 
           	$this->_mailer->send();
