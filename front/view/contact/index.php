@@ -22,7 +22,7 @@
 				});
 
 				var $request = $.post(
-					'/' + urlPrefix + '/contact/submit',
+					'contact/submit',
 					$('form').serialize() 
 				);
 
