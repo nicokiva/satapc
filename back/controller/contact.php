@@ -12,11 +12,11 @@
 			parent::__construct($configuration, $resourcesLoader);
 		}
 
-		public function Index($data) {
+		public function index($data) {
 			return $this->showView(null, $data);
 		}
 
-		public function Submit($data) {
+		public function submit($data) {
 			$email = utf8_decode($data['email']->getValue());
 			$name = utf8_decode($data['name']->getValue());
 			$text = utf8_decode($data['text']->getValue());
