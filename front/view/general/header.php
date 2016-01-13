@@ -12,5 +12,5 @@
 
 	<body>
 		<nav class="fixed-nav-bar">
-			<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'logo.gif'); ?>" class="logo" />
+			<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'logo.jpg'); ?>" class="logo" />
 		</nav>
