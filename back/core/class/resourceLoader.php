@@ -7,8 +7,8 @@
 		private $_resource_folders;
 		private $_resource_extensions_per_folders;
 
-		function resourceLoader($applicationName) {
-			$this->_resource_location = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $applicationName . '/front/resource/';
+		function resourceLoader($urlPrefix) {
+			$this->_resource_location = 'http://' . $_SERVER['HTTP_HOST'] . '/' . (!empty($urlPrefix) ? $urlPrefix  . '/' : '') . 'front/resource/';
 
 			$this->register('WEB_RESOURCE_CSS', 'css/');
 			$this->register('WEB_RESOURCE_JS', 'js/');

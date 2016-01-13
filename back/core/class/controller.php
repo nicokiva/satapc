@@ -55,7 +55,7 @@
 
 	 		echo '
 	 			<script type="text/javascript">
-	 				var siteName = "' . $this->_configuration->getKey('site_name') . '";
+	 				var urlPrefix = "' . $this->_configuration->getKey('url_prefix') . '";
 	 			</script>
 	 		';
 

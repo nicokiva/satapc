@@ -1,4 +1,8 @@
 <?
+	error_reporting(E_ALL); 
+	ini_set('display_errors', 1);
+
+
 	include_once('class/configuration.php');
 	include_once('class/resourceLoader.php');
 
@@ -13,7 +17,7 @@
 	unset($params['action']);
 
 	$configuration = new configuration();
-	$resourceLoader = new resourceLoader($configuration->getKey('site_name'));
+	$resourceLoader = new resourceLoader($configuration->getKey('url_prefix'));
 
 
 	$external = array('mailer' => new mailer($configuration));

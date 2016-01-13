@@ -22,7 +22,7 @@
 				});
 
 				var $request = $.post(
-					'/' + siteName + '/contact/submit',
+					'/' + urlPrefix + '/contact/submit',
 					$('form').serialize() 
 				);
 
@@ -81,7 +81,7 @@
 		  
 		  
 		  <div class="submit">
-		    <input type="submit" value="SEND" id="button-blue"/>
+		    <input type="submit" value="ENVIAR" id="button-blue"/>
 		    <div class="ease"></div>
 		  </div>
 		</form>
