@@ -137,7 +137,7 @@ input:focus, textarea:focus {
 	margin-bottom: 40px;
 }
 
-form span {
+#form-div span {
 	color: #fff;
 	font-size: 15pt;
 }
