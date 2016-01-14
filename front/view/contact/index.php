@@ -6,6 +6,18 @@
 	$(function() {
 		var validations = validator.create();
 
+		$('.services .more-services').toggle('slow');
+
+		$('.services .more').on('click', function() {
+			$('.services .more').hide();
+			$('.services .more-services').toggle('slow');
+		});
+
+		$('.services .less').on('click', function() {
+			$('.services .more-services').toggle('slow');
+			$('.services .more').show();
+		});
+
 		$('form').on('submit', function() {	
 			validationsResult = validations.checkValidations();
 
@@ -65,8 +77,19 @@
 
 <div id="form-main">
 	<div id="form-div">
-		<span>
-			Armado y reparación de computadoras / notebooks / cámaras
+		<span class="services">
+			<span class="data">
+				<a href="javascript:void(0);" class="more">Mostrar servicios >></a>
+				<div class="more-services"> 
+					<ul>
+						<li>Venta de computadoras y notebooks</li>
+						<li>Reparación de computadoras y notebooks</li>
+						<li>Instalación de cámaras de seguridad</li>
+						<li>Venta de insumos</li>
+					</ul>
+					<a href="javascript:void(0);" class="less">Ocultar servicios >></a>
+				</div>
+			</span>
 		</span>
 
 		<form class="form">

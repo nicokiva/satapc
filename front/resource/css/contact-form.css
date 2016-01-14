@@ -9,7 +9,8 @@
 }
 
 #form-div {
-    background-color: #333;
+
+    background-color: rgba(51,51,51, 0.8) ;
     padding-left: 35px;
     padding-right: 35px;
     padding-top: 35px;
