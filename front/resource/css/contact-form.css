@@ -9,19 +9,19 @@
 }
 
 #form-div {
-	background-color:rgba(72,72,72,0.4);
-	padding-left:35px;
-	padding-right:35px;
-	padding-top:35px;
-	padding-bottom:50px;
-	width: 450px;
-	float: left;
-	left: 50%;
-	position: absolute;
-  	margin-top:80px;
-	margin-left: -260px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
+    background-color: #333;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    width: 450px;
+    float: left;
+    left: 50%;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: -260px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
 }
 
 .feedback-input {
@@ -131,6 +131,15 @@ input:focus, textarea:focus {
 .submit:hover .ease{
   width:100%;
   background-color:white;
+}
+
+.form {
+	margin-bottom: 40px;
+}
+
+form span {
+	color: #fff;
+	font-size: 15pt;
 }
 
 @media only screen and (max-width: 580px) {

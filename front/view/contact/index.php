@@ -65,14 +65,18 @@
 
 <div id="form-main">
 	<div id="form-div">
-		<form class="form" id="form1">
+		<span>
+			Armado y reparación de computadoras / notebooks / cámaras
+		</span>
+
+		<form class="form">
 		  
 		  <p class="name">
-		    <input name="name" type="text" class="validate[required,custom[onlyLetter]] feedback-input" placeholder="Daniel González" id="name" />
+		    <input name="name" type="text" class="validate[required,custom[onlyLetter]] feedback-input" placeholder="Marcelo Díaz" id="name" />
 		  </p>
 		  
 		  <p class="email">
-		    <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="daniel.gonzalez@gmail.com" />
+		    <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="marcelo.diaz@gmail.com" />
 		  </p>
 		  
 		  <p class="text">
@@ -85,5 +89,12 @@
 		    <div class="ease"></div>
 		  </div>
 		</form>
+
+		<span>
+			O enviá un e-mail vos mismo a 
+			<a href="mailto:consultas@satapc.com" target="_top">consultas@satapc.com</a>
+		 	<br />O llamá al 
+		 	<a href="tel:+5491169220230" class="Blondie">15-6922-0230</a>
+		</span>
 	</div>
 </div>

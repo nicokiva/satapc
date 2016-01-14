@@ -1,25 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-html{    
-	background:url(../img/background.jpg) no-repeat;
-	background-size: cover;
-	height:100%;
+html {
+    background-size: cover;
+    height: 100%;
+    background-color: #444;
 }
 
 .fixed-nav-bar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 9999;
-	width: 100%;
-	height: 50px;
-	background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    padding: 1em 0 1em 20px;
 }
 
 .fixed-nav-bar .logo {
-	margin-left: 20px;
-	width: 100px;
-	height: 50px;
+    width: 100px;
+    height: 50px;
 }
 
 .error {
@@ -29,4 +29,8 @@ html{
 .error-description {
 	color: #ff5d00;
 	font-size: large;
+}
+
+a:link {
+    color: #bdb8b8;
 }
