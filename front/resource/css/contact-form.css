@@ -148,15 +148,19 @@ div.extra {
 	background-repeat: no-repeat;
 	background-size: 10px;
 	cursor: pointer;
-	width: 140px;
+	width: 170px;
 }
 
 div.more {
 	background-image: url(../img/icons/chevron-down.png);
+	font-size: 14pt;
+	margin-bottom: 5px;
 }
 
 div.less {
 	background-image: url(../img/icons/chevron-up.png);
+	font-size: 14pt;
+	margin-top: 10px;
 }
 
 @media only screen and (max-width: 580px) {

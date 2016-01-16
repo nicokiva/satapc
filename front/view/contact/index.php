@@ -78,11 +78,13 @@
 			<span class="data">
 				<div class="more extra">Mostrar servicios</div>
 					
-				<div class="more-services"> 
+				<div class="more-services">
+					<div class="content">
 					Venta de computadoras y notebooks<br />
 					Reparación de computadoras y notebooks<br />
 					Instalación de cámaras de seguridad<br />
 					Venta de insumos<br />
+					</div>
 					<div class="less extra">Ocultar servicios</div>
 				</div>
 			</span>
