@@ -16,9 +16,17 @@
 			}
 
 			$controller = controller::loadController($request->getController(), $this->_configuration, $this->_resourcesLoader, $external);
+			if (!isset($controller) || empty($controller)) {
+				// if controller not specified: /satapc/ => redirected to a default_controller taken from config
+				// default action is always index
+				$controller = $this->_configuration->getKey('default_controller');
+				$url_prefix = $this->_configuration->getKey('url_prefix');
+				header('Location: http://' . $_SERVER['HTTP_HOST'] . '/' . $url_prefix . '/' . $controller);
+				exit();
+			}
+
+
 			$action = $request->getAction();
-
-
 			if (!method_exists($controller, $action) || !is_callable(array($controller, $action))) {
 				/* index = Index */
 				// must return Not Found. TODO: Refactor to catch exceptions by type and response depending on a specific code.
