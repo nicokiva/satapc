@@ -140,7 +140,23 @@ input:focus, textarea:focus {
 
 #form-div span {
 	color: #fff;
-	font-size: 15pt;
+}
+
+
+div.extra {
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: 10px;
+	cursor: pointer;
+	width: 140px;
+}
+
+div.more {
+	background-image: url(../img/icons/chevron-down.png);
+}
+
+div.less {
+	background-image: url(../img/icons/chevron-up.png);
 }
 
 @media only screen and (max-width: 580px) {

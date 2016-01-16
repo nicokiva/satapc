@@ -4,6 +4,8 @@ html {
     background-size: cover;
     background-image: url(../img/background.jpg);
     height: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: lighter;
     /*background-color: #444;*/
 }
 
@@ -15,7 +17,7 @@ html {
     width: 100%;
     height: 50px;
     background-color: transparent;
-    padding: 1em 0 1em 20px;
+    padding: 1em 0 0 20px;
 }
 
 .fixed-nav-bar .logo {
@@ -34,4 +36,8 @@ html {
 
 a:link {
     color: #bdb8b8;
+}
+
+h2 {
+    padding: 0 10px;
 }
