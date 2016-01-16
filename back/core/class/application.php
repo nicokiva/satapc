@@ -21,7 +21,7 @@
 				// default action is always index
 				$controller = $this->_configuration->getKey('default_controller');
 				$url_prefix = $this->_configuration->getKey('url_prefix');
-				header('Location: http://' . $_SERVER['HTTP_HOST'] . '/' . $url_prefix . '/' . $controller);
+				header('Location: http://' . $_SERVER['HTTP_HOST'] . '/' . (!empty($url_prefix) ? $url_prefix . '/' : '') . $controller);
 				exit();
 			}
 
