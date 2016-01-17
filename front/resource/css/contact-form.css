@@ -163,6 +163,10 @@ div.less {
 	margin-top: 10px;
 }
 
+.social a {
+	text-decoration:none;
+}
+
 @media only screen and (max-width: 580px) {
 	#form-div{
 		left: 3%;

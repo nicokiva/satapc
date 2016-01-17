@@ -117,5 +117,17 @@
 		 	<br />O llamá al 
 		 	<a href="tel:+5491169220230" class="Blondie">15-6922-0230</a>
 		</span>
+
+		<br/>
+		<br/>
+
+		<div class="social">
+			<a href="https://www.facebook.com/SATAPCarg" target="_blank">
+				<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/facebook.png'); ?>" class="facebook" />
+			</a>
+			<a href="https://twitter.com/satapc" target="_blank">
+				<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/twitter.png'); ?>" class="twitter" />
+			</a>
+		</div>
 	</div>
 </div>
