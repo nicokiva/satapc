@@ -6,6 +6,7 @@
 	include_once('class/resourceLoader.php');
 
 	include_once('class/request.php');
+	include_once('class/response.php');
 	include_once('class/application.php');
 	include_once('class/controller.php');
 
