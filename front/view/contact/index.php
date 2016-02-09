@@ -5,17 +5,6 @@
 <script type="text/javascript">
 	$(function() {
 		var validations = validator.create();
-		$('.services .more-services').toggle('slow');
-
-		$('.services .more').on('click', function() {
-			$('.services .more').hide();
-			$('.services .more-services').toggle('fast');
-		});
-
-		$('.services .less').on('click', function() {
-			$('.services .more-services').toggle('fast');
-			$('.services .more').show();
-		});
 
 		$('form').on('submit', function() {	
 			validationsResult = validations.checkValidations();
@@ -72,62 +61,69 @@
 	}
 </script>
 
-<div id="form-main">
-	<div id="form-div">
-		<span class="services">
-			<span class="data">
-				<div class="more extra">Mostrar servicios</div>
-					
-				<div class="more-services">
-					<div class="content">
-					Venta de computadoras y notebooks<br />
-					Reparación de computadoras y notebooks<br />
-					Instalación de cámaras de seguridad<br />
-					Venta de insumos<br />
-					</div>
-					<div class="less extra">Ocultar servicios</div>
+<div class="form-main">
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-5 col-lg-5 box">
+				Venta de computadoras y notebooks<br />
+				Reparación de computadoras y notebooks<br />
+				Instalación de cámaras de seguridad<br />
+				Venta de insumos<br />
+			</div>
+
+			<div class="col-md-5 col-lg-5 box">
+				<form class="form">
+		  
+				<p class="name">
+					<input name="name" type="text" class="validate[required,custom[onlyLetter]] feedback-input" placeholder="Nombre" id="name" />
+				</p>
+
+				<p class="email">
+					<input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Correo Electrónico" />
+				</p>
+
+				<p class="text">
+					<textarea name="text" class="validate[required,length[6-300]] feedback-input" id="comment" placeholder="Consulta"></textarea>
+				</p>
+
+
+				<div class="submit">
+					<input type="submit" value="ENVIAR" id="button-blue"/>
+					<div class="ease"></div>
 				</div>
-			</span>
-		</span>
+				</form>
 
-		<form class="form">
-		  
-		  <p class="name">
-		    <input name="name" type="text" class="validate[required,custom[onlyLetter]] feedback-input" placeholder="Nombre" id="name" />
-		  </p>
-		  
-		  <p class="email">
-		    <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Correo Electrónico" />
-		  </p>
-		  
-		  <p class="text">
-		    <textarea name="text" class="validate[required,length[6-300]] feedback-input" id="comment" placeholder="Consulta"></textarea>
-		  </p>
-		  
-		  
-		  <div class="submit">
-		    <input type="submit" value="ENVIAR" id="button-blue"/>
-		    <div class="ease"></div>
-		  </div>
-		</form>
+				<span>
+					O enviá un e-mail a 
+					<a href="mailto:consultas@satapc.com" target="_top">consultas@satapc.com</a>
+						<br />O llamá al 
+						<a href="tel:+5491169220230" class="Blondie">15-6922-0230</a>
+				</span>
 
-		<span>
-			O enviá un e-mail a 
-			<a href="mailto:consultas@satapc.com" target="_top">consultas@satapc.com</a>
-		 	<br />O llamá al 
-		 	<a href="tel:+5491169220230" class="Blondie">15-6922-0230</a>
-		</span>
+				<br/>
+				<br/>
 
-		<br/>
-		<br/>
+				<div class="social">
+					<a href="https://www.facebook.com/SATAPCarg" target="_blank">
+						<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/facebook.png'); ?>" class="facebook" />
+					</a>
+					<a href="https://twitter.com/satapc" target="_blank">
+						<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/twitter.png'); ?>" class="twitter" />
+					</a>
+				</div>
+			</div>
 
-		<div class="social">
-			<a href="https://www.facebook.com/SATAPCarg" target="_blank">
-				<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/facebook.png'); ?>" class="facebook" />
-			</a>
-			<a href="https://twitter.com/satapc" target="_blank">
-				<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/twitter.png'); ?>" class="twitter" />
-			</a>
 		</div>
 	</div>
+		
+
+<!--
+	<div id="form-div">
+		
+
+		
+	</div>
+-->
 </div>
