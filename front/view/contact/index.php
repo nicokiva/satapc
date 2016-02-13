@@ -33,7 +33,7 @@
 
 					setTimeout($.unblockUI, 4000); // closes the success popup
 				})
-				.fail(function(a) {
+				.fail(function() {
 					$.unblockUI(); // closes the sending email popup
 
 					var message = 
