@@ -61,38 +61,75 @@
 	}
 </script>
 
-<div class="form-main">
+<div class="main">
 
 	<div class="container">
 		<div class="row">
 
-			<div class="col-md-5 col-lg-5 box">
-				Venta de computadoras y notebooks<br />
-				Reparación de computadoras y notebooks<br />
-				Instalación de cámaras de seguridad<br />
-				Venta de insumos<br />
+			<div class="col-md-5 col-lg-5 box we">
+				<div class="paragraph">
+					<span class="title">¿Quienes somos?</span><br />
+					<p class="text">
+						SATAPC es una empresa surgida a principios de 2014 que nace con el objetivo de brindar soluciones tecnológicas a empresas y particulares.<br />
+						
+						<span class="title">Visión:</span> Ser referente en lo que a tecnología se refiere, tanto en hardware como software.<br />
+
+						<span class="title">Misión:</span> Liderar el mercado de artículos tecnológicos del país brindándole satisfacción a los clientes a través de una asesoría dedicada y especializada, y ofreciendo una diversa gama de opciones en la búsqueda de la solución.
+					</p>
+				</div>
+
+				<div class="paragraph">
+					<span class="title">¿Qué hacemos?</span><br />
+					<span class="text">
+						Somos especialistas en:
+						<ul>
+							<li>Venta de smartphones y tablets</li>
+							<li>Venta de computadoras y notebooks prearmadas y a medida</li>
+							<li>Reparación de computadoras y notebooks</li>
+							<li>Venta de insumos</li>
+							<li>Diseño y desarrollo de sitios web.</li>
+							<li>Diseño y desarrollo de aplicaciones de escritorio y móviles</li>
+							<li>Instalación de cámaras de seguridad</li>
+							<li>Consultoría tecnológica</li>
+						</ul>
+					</span>
+				</div>
+
+				<div class="paragraph">
+					<span class="title">¿Por qué nosotros?</span><br />
+					<span class="text">
+						Nos destacamos del resto del mercado en:
+						<ul>
+							<li>Siempre ofrecemos más de una solución</li>
+							<li>Ofrecemos los mejores precios</li>
+							<li>Trabajamos con las mejores marcas del mercado</li>
+							<li>Brindamos un asesoramiento personal</li>
+							<li>Nuestro espíritu innovador nos hace ofrecer siempre soluciones modernas y estables</li>
+							<li>Nuestros productos son de calidad</li>
+						</ul>
+					</span>
+				</div>
 			</div>
 
 			<div class="col-md-5 col-lg-5 box">
 				<form class="form">
-		  
-				<p class="name">
-					<input name="name" type="text" class="validate[required,custom[onlyLetter]] feedback-input" placeholder="Nombre" id="name" />
-				</p>
+					<p class="name">
+						<input name="name" type="text" class="validate[required,custom[onlyLetter]] feedback-input" placeholder="Nombre" id="name" />
+					</p>
 
-				<p class="email">
-					<input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Correo Electrónico" />
-				</p>
+					<p class="email">
+						<input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Correo Electrónico" />
+					</p>
 
-				<p class="text">
-					<textarea name="text" class="validate[required,length[6-300]] feedback-input" id="comment" placeholder="Consulta"></textarea>
-				</p>
+					<p class="text">
+						<textarea name="text" class="validate[required,length[6-300]] feedback-input" id="comment" placeholder="Consulta"></textarea>
+					</p>
 
 
-				<div class="submit">
-					<input type="submit" value="ENVIAR" id="button-blue"/>
-					<div class="ease"></div>
-				</div>
+					<div class="submit">
+						<input type="submit" value="ENVIAR" id="button-blue"/>
+						<div class="ease"></div>
+					</div>
 				</form>
 
 				<span>

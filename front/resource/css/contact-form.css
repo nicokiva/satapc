@@ -2,7 +2,7 @@
 	text-align:center;
 }
 
-.form-main{
+.main{
 	width:100%;
 	float:left;
 	padding-top:0px;
@@ -25,7 +25,7 @@
     margin-right: 40px;
 	margin-top: 80px;
 
-	min-height: 617px;	
+	min-height: 660px;	
     
     padding-left: 35px;
     padding-right: 35px;
