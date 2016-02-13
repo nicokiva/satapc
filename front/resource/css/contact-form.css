@@ -139,7 +139,7 @@ input:focus, textarea:focus {
 	
 .ease {
 	width: 0px;
-	height: 74px;
+	height: 78px;
 	background-color: #fbfbfb;
 	-webkit-transition: .3s ease;
 	-moz-transition: .3s ease;
