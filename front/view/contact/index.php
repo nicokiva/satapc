@@ -105,7 +105,7 @@
 							<li>Trabajamos con las mejores marcas del mercado</li>
 							<li>Brindamos un asesoramiento personal</li>
 							<li>Nuestro espíritu innovador nos hace ofrecer siempre soluciones modernas y estables</li>
-							<li>Nuestros productos son de calidad</li>
+							<li>Nuestros productos son de la más alta calidad</li>
 						</ul>
 					</span>
 				</div>
