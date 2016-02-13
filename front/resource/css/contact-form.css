@@ -25,11 +25,11 @@
     margin-right: 40px;
 	margin-top: 80px;
 
-	min-height: 660px;	
+	min-height: 661px;	
     
     padding-left: 35px;
     padding-right: 35px;
-    padding-top: 35px;
+    padding-top: 45px;
     padding-bottom: 50px;
 
 	-moz-border-radius: 7px;
@@ -47,7 +47,7 @@
 .feedback-input {
 	color:#3c3c3c;
 	font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
+	font-weight:500;
 	font-size: 18px;
 	border-radius: 0;
 	line-height: 22px;
@@ -59,7 +59,7 @@
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
-  border: 3px solid rgba(0,0,0,0);
+	border: 3px solid rgba(0,0,0,0);
 }
 
 .feedback-input:focus{

@@ -3,8 +3,24 @@
 <script type="text/javascript" src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_JS', 'validator.js'); ?>"></script>
 
 <script type="text/javascript">
-	$(function() {
+	var showWe = true;
+
+	$(function() {		
 		var validations = validator.create();
+
+		$('.we .more').on('click', function() {
+			showWe = !showWe;
+
+			if (showWe) {
+				$(this).removeClass('glyphicon-triangle-bottom');
+				$(this).addClass('glyphicon-triangle-top');
+				$('.we').removeClass('half-collapse');
+			} else {
+				$(this).removeClass('glyphicon-triangle-top');
+				$(this).addClass('glyphicon-triangle-bottom');
+				$('.we').addClass('half-collapse');
+			}
+		});
 
 		$('form').on('submit', function() {	
 			validationsResult = validations.checkValidations();
@@ -67,6 +83,7 @@
 		<div class="row">
 
 			<div class="col-md-5 col-lg-5 box we">
+
 				<div class="paragraph">
 					<span class="title">¿Quienes somos?</span><br />
 					<p class="text">
@@ -109,6 +126,8 @@
 						</ul>
 					</span>
 				</div>
+
+				<span class="more glyphicon glyphicon-triangle-top visible-xs visible-sm"></span>
 			</div>
 
 			<div class="col-md-5 col-lg-5 box">
@@ -154,13 +173,4 @@
 
 		</div>
 	</div>
-		
-
-<!--
-	<div id="form-div">
-		
-
-		
-	</div>
--->
 </div>

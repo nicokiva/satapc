@@ -1,22 +1,56 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 html {
-    background-size: cover;
-    background-image: url(../img/background.jpg);
     height: 100%;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: lighter;
 }
 
 body {
+    background-size: cover;
+    background-image: url(../img/background.jpg);
     color: #B5B0B0;
     font-size: 13px;
 }
 
+
+h2 {
+    display: block;
+    font-size: 24px;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+.hidden {
+    visibility: hidden
+}
+
 /* we */
+@media (max-width:  992px) {
+    /* if landscape => is not used */
+    .we.half-collapse .paragraph:not(:first-child) {
+        display: none;
+    }
+
+    .we.half-collapse {
+        min-height: 0 !important;
+    }
+}
+
+.we .glyphicon {
+    cursor: pointer;
+    float: right;
+}
 
 .we {
     text-align: left;
+}
+
+.paragraph:first {
+    margin-top: 10px;
 }
 
 .paragraph {
@@ -30,9 +64,6 @@ body {
 /* /we */
 
 .fixed-nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 9999;
     width: 100%;
     height: 50px;

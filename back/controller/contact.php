@@ -11,7 +11,7 @@
 
 			parent::__construct($configuration, $resourcesLoader);
 		}
-
+		
 		public function index($data) {
 			return $this->showView(null, $data);
 		}
