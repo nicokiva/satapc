@@ -169,7 +169,7 @@
 						<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/twitter.png'); ?>" class="twitter" />
 					</a>
 					<a href="whatsapp://send?abid=" target="_blank">
-						<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/whatsapp.png'); ?>" class="twitter" />
+						<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/whatsapp.png'); ?>" class="whatsapp" />
 					</a>
 				</div>
 			</div>
