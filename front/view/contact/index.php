@@ -168,7 +168,7 @@
 					<a href="https://twitter.com/satapc" target="_blank">
 						<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/twitter.png'); ?>" class="twitter" />
 					</a>
-					<a href="whatsapp://send?abid=" target="_blank">
+					<a href="whatsapp://send?text=Hola,%20necesitaría%20realizar%20un%20trabajo." target="_blank">
 						<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/whatsapp.png'); ?>" class="whatsapp" />
 					</a>
 				</div>
