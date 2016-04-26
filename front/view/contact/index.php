@@ -101,8 +101,9 @@
 						Somos especialistas en:
 						<ul>
 							<li>Venta de smartphones y tablets</li>
-							<li>Venta de computadoras y notebooks prearmadas y a medida</li>
+							<li>Venta de computadoras y notebooks pre armadas y a medida</li>
 							<li>Reparación de computadoras y notebooks</li>
+							<li>Soporte técnico de software</li>
 							<li>Venta de insumos</li>
 							<li>Diseño y desarrollo de sitios web.</li>
 							<li>Diseño y desarrollo de aplicaciones de escritorio y móviles</li>
