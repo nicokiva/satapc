@@ -8,6 +8,8 @@
 	$(function() {		
 		var validations = validator.create();
 
+		$('.whatsapp').tooltip();
+
 		$('.we .more').on('click', function() {
 			showWe = !showWe;
 

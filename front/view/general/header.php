@@ -8,10 +8,13 @@
 		<link rel="stylesheet" type="text/css" href="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_CSS', 'bootstrap.min.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_CSS', 'bootstrap-theme.min.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_CSS', 'main.css'); ?>" />
-
+		<link rel="stylesheet" type="text/css" href="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_CSS', 'jquery-ui.min.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_CSS', 'jquery-ui.structure.min.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_CSS', 'jquery-ui.theme.min.css'); ?>" />
 		<script type="text/javascript" src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_JS', 'jquery-2.1.4.min.js'); ?>"></script>
 		<script type="text/javascript" src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_JS', 'jquery.blockUI.js'); ?>"></script>
 		<script type="text/javascript" src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_JS', 'bootstrap.min.js'); ?>"></script>
+		<script type="text/javascript" src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_JS', 'jquery-ui.min.js'); ?>"></script>
 		<title>SATAPC</title>
 	</head>
 
