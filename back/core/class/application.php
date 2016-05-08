@@ -6,7 +6,7 @@
 		private $_response;
 
 
-		public function application($configuration, $resourcesLoader) {
+		public function __construct($configuration, $resourcesLoader) {
 			$this->_configuration = $configuration;
 			$this->_resourcesLoader = $resourcesLoader;
 			$this->_response = new response();

@@ -28,7 +28,7 @@
 			}
 		}
 
-		public function controller ($configuration, $resourcesLoader) {
+		public function __construct ($configuration, $resourcesLoader) {
 			$this->_configuration = $configuration;			
 			$this->_controllerName = str_replace('controller', '', strtolower(get_class($this))); // get each controller's name
 			$this->_resourcesLoader = $resourcesLoader;

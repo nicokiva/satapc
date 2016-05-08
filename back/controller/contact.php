@@ -2,7 +2,7 @@
 	class contactController extends controller {
 		private $_mailer;
 
-		public function contactController($configuration, $resourcesLoader, $external) {
+		public function __construct($configuration, $resourcesLoader, $external) {
 			if (!array_key_exists('mailer', $external) || $external['mailer'] == null) {
 				throw new Exception('Missing Mailer');
 			}

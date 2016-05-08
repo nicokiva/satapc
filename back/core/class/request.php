@@ -17,7 +17,7 @@
 		}
 		
 
-		function request ($controller, $action, $params) {
+		function __construct ($controller, $action, $params) {
 			if (!isset($controller) || empty($controller)) {
 				throw new Exception("Missing Controller");
 			}
@@ -43,7 +43,7 @@
 		private $_name;
 		private $_value;
 
-		function param ($key, $value) {
+		function __construct ($key, $value) {
 			if (!isset($key) || empty($key)) {
 				throw new Exception("Missing Key");
 			}

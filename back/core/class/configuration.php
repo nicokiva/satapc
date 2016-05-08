@@ -2,7 +2,7 @@
 	class configuration {
 		protected $_data;
 
-		function configuration() {
+		function __construct() {
 			$this->_data = parse_ini_file('../../configuration.ini');
 		}
 
