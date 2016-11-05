@@ -157,8 +157,8 @@
 				<span>
 					O enviá un e-mail a 
 					<a href="mailto:consultas@satapc.com" target="_top">consultas@satapc.com</a>
-						<br />O llamá al 
-						<a href="tel:+5491169220230" class="Blondie">15-6922-0230</a>
+					<br />O llamá al 
+					<a href="tel:+5491169220230" class="Blondie">15-6922-0230</a>
 				</span>
 
 				<br/>
@@ -171,7 +171,13 @@
 					<a href="https://twitter.com/satapc" target="_blank">
 						<img src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/twitter.png'); ?>" class="twitter" />
 					</a>
-					<img title="Agreganos y hacenos tu consulta al: 156-922-0230" src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/whatsapp.png'); ?>" class="whatsapp" />
+					<img title="Agreganos y hacenos tu consulta al: 15-6922-0230" src="<?= $resourcesLoader->resolvePath('WEB_RESOURCE_IMG', 'icons/whatsapp.png'); ?>" class="whatsapp" />
+				</div>
+
+				<br />
+
+				<div class="remote-support">
+					<a href="https://get.teamviewer.com/satapc">¿Necesitás ayuda remota? Presioná acá, descargá el programa y danos acceso</a>
 				</div>
 			</div>
 

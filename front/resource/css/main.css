@@ -92,3 +92,10 @@ a:link {
 h2 {
     padding: 0 10px;
 }
+
+.remote-support a {
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: underline;
+}
